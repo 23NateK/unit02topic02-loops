@@ -22,10 +22,11 @@ public static void nHellos(int a){
 
 public static void nRandoms(int length){
   double result = Math.random();
+  result = Math.round(result*Math.pow(10, length))/Math.pow(10, length);
   System.out.println(result);
 }
   public static void main(String[] args) {
     //nHellos(150);
-    nRandoms(5);
+    nRandoms(10);
   }
 }
