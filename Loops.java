@@ -25,8 +25,18 @@ public static void nRandoms(int length){
   result = Math.round(result*Math.pow(10, length))/Math.pow(10, length);
   System.out.println(result);
 }
+public static boolean isPrime(int integer){
+  boolean bool = true;
+  if(integer%2==0||integer%3==0||integer%5==0||integer%7==0){
+    bool=false;
+  }
+  return bool;
+}
+
+
   public static void main(String[] args) {
     //nHellos(150);
-    nRandoms(10);
+    //nRandoms(10);
+    System.out.println(isPrime(59));
   }
 }
