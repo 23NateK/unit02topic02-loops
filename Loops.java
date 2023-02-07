@@ -49,12 +49,39 @@ public static int[] getFactors(int integer){
   return listnums;
 }
 
-
+public static void pepysSimulation(){
+  int winc6=0;
+  int winc12=0;
+  for (int n=1;n<=6;n++){
+    double roll = Math.round(Math.random()*7);
+    if (roll==1.0);{
+      winc6++;
+    }
+  }
+  int minicount=0;
+  for (int n=1;n<=12;n++){
+    double roll = Math.round(Math.random()*7);
+    if (roll==1.0){
+      minicount++;
+    }
+    if (minicount==2){
+      winc12++;
+    }
+  }
+  if (winc6>winc12){
+    System.out.println("6 rolls won");
+  }else if(winc6<winc12){
+    System.out.println("12 rolls won");
+  }else{
+    System.out.println("neither or both won");
+  }
+}
 
   public static void main(String[] args) {
     //nHellos(150);
     //nRandoms(10);
     //System.out.println(isPrime(59));
-    System.out.println(Arrays.toString(getFactors(24)));
+    //System.out.println(Arrays.toString(getFactors(24)));
+    pepysSimulation();
   }
 }
