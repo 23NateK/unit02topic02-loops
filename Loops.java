@@ -1,4 +1,4 @@
-import java.util.Arrays;
+//import java.util.Arrays;
 public class Loops {
 
 public static void nHellos(int a){
@@ -77,11 +77,44 @@ public static void pepysSimulation(){
   }
 }
 
+public static void montyHallSimulation(int n){
+  int winsa=0;
+for (int a=1;a<=n;a++){
+  double correctans= Math.round(Math.random()*2+1);
+  double guess = Math.round(Math.random()*2+1);
+  double originalguess=guess;
+  double removedoor=Math.round(Math.random()*2+1);;
+  while(removedoor==correctans||removedoor==guess){
+    removedoor=Math.round(Math.random()*2+1);
+  }
+  while(guess==removedoor||guess==originalguess){
+    guess=Math.round(Math.random()*2+1);
+  }
+  if (guess==correctans){
+    winsa++;
+  }
+}
+System.out.println("Always Switch Wins: "+winsa);
+int winsn=0;
+for (int a=1;a<=n;a++){
+  double correctans= Math.round(Math.random()*2+1);
+  double guess = Math.round(Math.random()*2+1);
+if (guess==correctans){
+  winsn++;
+  }
+}
+System.out.println("Never Switch Wins: "+winsn);
+}
+
+
+
+
   public static void main(String[] args) {
     //nHellos(150);
     //nRandoms(10);
     //System.out.println(isPrime(59));
     //System.out.println(Arrays.toString(getFactors(24)));
-    pepysSimulation();
+    //pepysSimulation();
+    montyHallSimulation(5);
   }
 }
